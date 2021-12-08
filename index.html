@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://media.istockphoto.com/vectors/thermometer-icon-temperature-icon-thermometer-icon-in-flat-style-vector-id1271736319?k=20&m=1271736319&s=170667a&w=0&h=VhsxM8WqtOF9aWZTwehAD0sWRsXG8xs90Ngyys2roVg=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <style>
+    body{
+        font-family: 'Fuzzy Bubbles', cursive;
+         margin: 0;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background: #0b0404;
+     }
+     h1{
+         margin: 0;
+         color: white;
+         text-shadow: 0 0 10px #bbbbbb;
+         font-size: 80px;
+     }
+     #unicode{
+         font-size: 120px!important;
+         text-shadow: 0 0 black;
+     }
+    </style>
+    <title>Thermometer</title>
+</head>
+<body>
+    <h1>
+        Animated Thermometer <span id="unicode"></span>
+    </h1>
+    <script>
+        const tempLoad = () => {
+            let icon = document.getElementById("unicode");
+            setTimeout(() => {
+                icon.innerHTML = '<i class="fas fa-thermometer-empty"></i>';
+                icon.style.color = "#A0EA01";
+            }, 0000);
+            setTimeout(() => {
+                icon.innerHTML = '<i class="fas fa-thermometer-quarter"></i>';
+                icon.style.color = "yellow";
+            }, 1000);
+            setTimeout(() => {
+                icon.innerHTML = '<i class="fas fa-thermometer-half"></i>';
+                icon.style.color = "yellow";
+            }, 2000);
+            setTimeout(() => {
+                icon.innerHTML = '<i class="fas fa-thermometer-three-quarters"></i>';
+                icon.style.color = "yellow";
+            }, 3000);
+            setTimeout(() => {
+                icon.innerHTML = '<i class="fas fa-thermometer-full"></i>';
+                icon.style.color = "#FC4703";
+            }, 4000);
+        }
+        tempLoad();
+        setInterval(() => {
+            tempLoad();
+        }, 5000);
+    </script>
+
+</body>
+</html>
